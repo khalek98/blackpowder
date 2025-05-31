@@ -26,7 +26,7 @@ const ThrivedxLogo: React.FC<IconProps> = ({ ...props }) => {
       onMouseLeave={handleHoverOut}
       {...props}
     >
-      <g clip-path="url(#clip0_657_376)">
+      <g>
         <path
           d="M22.2002 0.824219V5.69099H14.0012V28.3114H8.23759V5.69267H0V0.824219H22.2002Z"
           fill="white"
@@ -63,11 +63,6 @@ const ThrivedxLogo: React.FC<IconProps> = ({ ...props }) => {
           fill="white"
         />
       </g>
-      <defs>
-        <clipPath id="clip0_657_376">
-          <rect width="159.5" height="29" fill="white" />
-        </clipPath>
-      </defs>
     </svg>
   );
 };

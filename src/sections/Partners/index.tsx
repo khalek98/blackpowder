@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 import { IconProps } from "@/assets/icons/IconProps";
 
@@ -109,7 +110,7 @@ const Partners = () => {
       <div className={cn(styles.content)}>
         <div className={styles.head}>
           <h2 className={styles.label}>Working Together</h2>
-          <h3 className={styles.title}>Our Partners</h3>
+          <h3 className={styles.title}>Our Partners {currentCountElements}</h3>
 
           <div
             ref={partnersContainerRef}
@@ -139,7 +140,7 @@ const Partners = () => {
                       />
                     ) : img ? (
                       <Image
-                        src={img.src}
+                        src={img}
                         alt={name}
                         width={img.width}
                         height={img.height}

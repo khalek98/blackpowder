@@ -1,9 +1,9 @@
 import cn from "classnames";
+import Link from "next/link";
 import { animateScroll } from "react-scroll";
 
 import styles from "./footer.module.scss";
 import ArrowIcon from "./icons/ArrowIcon";
-import Link from "next/link";
 import LogoIcon from "@/assets/icons/LogoIcon";
 
 const Footer = () => {

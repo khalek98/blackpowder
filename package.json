@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "next": "^13.5.11",
+    "next": "^13.2.4",
     "react": "^18.3.1",
     "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
@@ -21,12 +21,12 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "18.15.0",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@types/react-scroll": "^1.8.10",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.28.0",
-    "eslint-config-next": "^15.3.3",
+    "eslint": "^8.36.0",
+    "eslint-config-next": "13.2.4",
     "postcss": "^8.5.4",
     "sass": "^1.89.1",
     "typescript": "^5.8.3"
