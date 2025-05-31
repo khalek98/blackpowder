@@ -1,0 +1,207 @@
+@use "@/styles/_media-mixin.scss" as media;
+@use "@/styles/_variables.scss" as vars;
+@use "@/styles/_mixins.scss" as mix;
+
+.Header {
+  position: fixed;
+  padding: 16px 0;
+  top: 0px;
+
+  z-index: 10;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: transparent;
+
+  transition: all 0.3s ease;
+
+  &.fixed,
+  &.open {
+    // box-shadow: 0px 4.605px 18.422px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 18px 0px rgba(255, 255, 255, 0.1);
+  }
+
+  &.open {
+    border-radius: 0 0 32px 20px;
+  }
+
+  @include media.media-sm {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  @include media.media-md {
+    padding: 12px 30px;
+    max-width: 880px;
+  }
+
+  @include media.media-lg {
+    max-width: 1080px;
+  }
+
+  @include media.media-xl {
+    max-width: 1320px;
+  }
+
+  @include media.media-2xl {
+    max-width: 1640px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.Inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.LogoWrapper {
+  display: flex;
+}
+
+.Logo {
+  width: auto;
+  height: 36px;
+
+  @include media.media-md {
+    height: 48px;
+  }
+}
+
+.Nav {
+  display: none;
+
+  &.Mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+
+    transition: all 0.3s ease;
+    will-change: height;
+
+    &.open {
+      margin-top: 50px;
+      margin-bottom: 16px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @include media.media-md {
+    display: flex;
+    margin: 0;
+
+    &.Mobile {
+      display: none;
+
+      &.open {
+        display: none;
+      }
+    }
+  }
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include media.media-md {
+    flex-direction: row;
+  }
+}
+
+.MenuLink {
+  padding: 0 12px;
+
+  color: #fff;
+  font-family: Outfit;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: 0.2px;
+
+  transition: all 0.2s ease;
+
+  @include media.media-md {
+    font-size: 16px;
+  }
+}
+
+.buttonContact {
+  display: none;
+
+  &.mobile {
+    @include mix.btn;
+    padding: 12px 40px;
+  }
+}
+
+.Burger {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  span {
+    width: 30px;
+    height: 3px;
+
+    border-radius: 10px;
+    background: #fff;
+
+    transition: all 0.3s ease;
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        transform: translate(0, 9px) rotate(225deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translate(0, -9px) rotate(135deg);
+      }
+    }
+  }
+
+  @include media.media-md {
+    display: none;
+  }
+}

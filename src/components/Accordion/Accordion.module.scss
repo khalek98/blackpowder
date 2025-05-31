@@ -1,0 +1,91 @@
+@use "@/styles/_media-mixin.scss" as media;
+@use "@/styles/_variables.scss" as vars;
+@use "@/styles/_mixins.scss" as mix;
+
+.accordion {
+  width: 100%;
+}
+
+.accordionItem {
+  padding: 36px 0;
+
+  border-top: 1px solid rgba(71, 85, 105, 0.3);
+
+  &:last-child {
+    border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  }
+
+  &.active {
+    .accordionContent {
+      margin-top: 24px;
+    }
+
+    .accordionIcon {
+      span {
+        &:nth-child(2) {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+    }
+
+    .accordionTitle {
+      font-weight: 700;
+    }
+  }
+}
+
+.accordionHeader {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 16px;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.accordionTitle {
+  color: #0f172a;
+  font-family: "Work Sans";
+  font-size: 22px;
+  text-align: start;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 133.333% */
+  letter-spacing: 0.72px;
+
+  transition: all 0.3s ease;
+}
+
+.accordionIcon {
+  position: relative;
+  margin-top: 13px;
+
+  display: flex;
+  flex-shrink: 0;
+
+  span {
+    width: 24px;
+    height: 3px;
+    background: #0f172a;
+
+    transition: all 0.3s ease;
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.accordionContent {
+  margin-top: 0;
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s ease;
+}

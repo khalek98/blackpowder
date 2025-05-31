@@ -1,0 +1,61 @@
+@use "@/styles/_media-mixin.scss" as media;
+@use "@/styles/_variables.scss" as vars;
+@use "@/styles/_mixins.scss" as mix;
+
+.hero {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 80px;
+
+  background: linear-gradient(
+      350deg,
+      rgba(0, 3, 2, 0.88) 24.47%,
+      rgba(3, 7, 24, 0.7) 35.81%,
+      rgba(3, 7, 24, 0.62) 47.32%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 69.66%,
+      rgba(0, 0, 0, 0.8) 83.29%,
+      #000 86.88%
+    ),
+    url("./img/hero_mg.jpg") center center / cover no-repeat;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: var(--text-main, #eaf8f5);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 50.4px */
+  letter-spacing: 0.42px;
+}
+
+.description {
+  margin-top: 8px;
+
+  color: var(--text-Secondary, rgba(255, 255, 255, 0.8));
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.8px;
+}
+
+.button {
+  @include mix.btn-filled;
+
+  padding: 12px 40px;
+  margin-top: 64px;
+  width: 100%;
+}

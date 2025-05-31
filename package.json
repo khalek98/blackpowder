@@ -1,0 +1,43 @@
+{
+  "name": "black_powders",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.56.4",
+    "react-scroll": "^1.9.3",
+    "swiper": "^11.2.8"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "18.15.0",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@types/react-scroll": "^1.8.10",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8.5.4",
+    "sass": "^1.89.1",
+    "typescript": "^5.8.3"
+  },
+  "browserslist": [
+    "> 0.05%",
+    "IE 11",
+    "last 2 versions",
+    "not dead"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1"
+}
