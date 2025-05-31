@@ -25,6 +25,12 @@ const Video = () => {
       }
     };
 
+    if (videoRef.current) {
+      videoRef.current.addEventListener("playing", () => {
+        videoRef.current?.play();
+      });
+    }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [playVideo]);
@@ -39,9 +45,9 @@ const Video = () => {
         className={styles.video}
         autoPlay={true}
         playsInline
-        controls={false}
+        controls={showControls}
         controlsList="nodownload"
-        poster="/satellite_poster.jpg"
+        poster="/satellite_poster.png"
         muted
         loop
       >
