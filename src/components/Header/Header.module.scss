@@ -26,28 +26,6 @@
   &.open {
     border-radius: 0 0 32px 20px;
   }
-
-  @include media.media-sm {
-    width: 100%;
-    max-width: 720px;
-  }
-
-  @include media.media-md {
-    padding: 12px 30px;
-    max-width: 880px;
-  }
-
-  @include media.media-lg {
-    max-width: 1080px;
-  }
-
-  @include media.media-xl {
-    max-width: 1320px;
-  }
-
-  @include media.media-2xl {
-    max-width: 1640px;
-  }
 }
 
 .overlay {

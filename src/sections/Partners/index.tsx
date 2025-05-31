@@ -83,39 +83,33 @@ const partnerLogos: {
 ];
 
 const Partners = () => {
-  const partnersContainerRef = useRef<HTMLDivElement>(null);
+  const partnerRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [currentCountElements, setCurrentCountElements] = useState(0);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (partnersContainerRef.current) {
-      const elements = partnersContainerRef.current.children;
-      let count = 0;
+    const visibleCount = partnerRefs.current.reduce((count, el) => {
+      if (!el) return count;
+      const display = getComputedStyle(el).display;
+      return display !== "none" ? count + 1 : count;
+    }, 0);
 
-      for (let i = 0; i < elements.length; i++) {
-        const element: HTMLElement = elements[i] as HTMLElement;
-
-        if (element.computedStyleMap().get("display")?.toString() !== "none") {
-          count++;
-        }
-      }
-      setCurrentCountElements(count);
-    }
-  }, [partnersContainerRef, showMore]);
+    setCurrentCountElements(visibleCount);
+  }, [partnerRefs, showMore]);
 
   return (
     <section id="partners" className={styles.section}>
       <div className={cn(styles.content)}>
         <div className={styles.head}>
           <h2 className={styles.label}>Working Together</h2>
-          <h3 className={styles.title}>Our Partners {currentCountElements}</h3>
+          <h3 className={styles.title}>Our Partners</h3>
 
           <div
-            ref={partnersContainerRef}
             className={cn(styles.logos, {
-              [styles.hasLasChildOdd]: currentCountElements % 2 !== 0,
+              [styles.hasLasChildOdd]:
+                (currentCountElements + (!showMore ? 1 : 0)) % 2 !== 0,
             })}
           >
             {partnerLogos.map(
@@ -124,6 +118,11 @@ const Partners = () => {
                 index
               ) => (
                 <div
+                  ref={(el) => {
+                    if (el) {
+                      partnerRefs.current[index] = el;
+                    }
+                  }}
                   key={index}
                   className={cn(styles.logoWrapper, {
                     [styles.show]: showMore,
@@ -139,11 +138,9 @@ const Partners = () => {
                         className={cn(styles.logo, styles.logoSVG)}
                       />
                     ) : img ? (
-                      <Image
-                        src={img}
+                      <img
+                        src={img.src}
                         alt={name}
-                        width={img.width}
-                        height={img.height}
                         className={cn(styles.logo, styles.logoImg)}
                       />
                     ) : null}

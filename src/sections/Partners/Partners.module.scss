@@ -7,6 +7,13 @@
   padding: 80px 0;
 
   background-color: #000302;
+  background-image: url("./img/partners_bg.png");
+  background-size: cover;
+  background-position-x: -60px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  // background: url("./img/partners_bg.png") center center / cover no-repeat
+  //   #000302;
 }
 
 .head {
@@ -43,13 +50,9 @@
 
   &.hasLasChildOdd > :last-child {
     grid-column: span 2;
+    border-right: none;
     border-bottom: 1px solid #3c3c3c;
   }
-
-  // &:has(:nth-last-child(2n + 1)) > :last-child {
-  //   grid-column: span 2;
-  //   border-bottom: 1px solid #3c3c3c;
-  // }
 }
 
 .logoWrapper,
@@ -85,8 +88,12 @@
     border-bottom: 1px solid #3c3c3c;
   }
 
-  &:nth-child(n + 3) {
+  &:nth-child(2n + 3) {
     border-right: 1px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c;
+  }
+
+  &:nth-child(n + 3) {
     border-bottom: 1px solid #3c3c3c;
   }
 
