@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "next": "^15.3.3",
-    "react": "^19.1.0",
+    "next": "^13.5.11",
+    "react": "^18.3.1",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.1.0",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.56.4",
     "react-scroll": "^1.9.3",
     "swiper": "^11.2.8"
