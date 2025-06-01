@@ -9,7 +9,6 @@ import SatelliteServicesIMG from "./img/satellite_services.jpg";
 import DroneAntiDroneTechnologiesIMG from "./img/drone_anti-drone_technologies.jpg";
 import CybersecurityIMG from "./img/cybersecurity.jpg";
 import ManufacturingSolutionsIMG from "./img/manufacturing_solutions.jpg";
-import Image from "next/image";
 
 const solutionList = [
   {
@@ -143,12 +142,10 @@ const Services = () => {
           {solutionList.map((solution, index) => (
             <li className={styles.solutionItem} key={index}>
               <h4 className={styles.solutionTitle}>{solution.title}</h4>
-              <Image
-                src={solution.img}
+              <img
+                src={solution.img.src}
                 alt={solution.title}
                 className={styles.solutionImage}
-                width={solution.img.width}
-                height={solution.img.height}
               />
 
               <div className={styles.solutionDescriptionWrapper}>
