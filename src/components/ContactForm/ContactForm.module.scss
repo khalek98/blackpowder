@@ -27,7 +27,7 @@
 
   display: none;
 
-  background: #fff;
+  background: #020512;
   box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
 
   transform: none;
@@ -51,12 +51,13 @@
 
 .formContainer {
   position: relative;
-  padding: 10px;
+  padding: 20px;
   width: 100%;
-  height: 100%;
+  height: max-content;
 
   display: flex;
   flex-direction: column;
+  row-gap: 40px;
 
   @include media.media-md {
     flex-direction: row;
@@ -65,13 +66,13 @@
 
 .closeBtn {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 44px;
+  right: 44px;
 
   height: 24px;
   width: 24px;
 
-  fill: #fe6a2e;
+  fill: #fff;
   cursor: pointer;
 
   @include media.media-md {
@@ -81,16 +82,17 @@
 }
 
 .content {
-  padding: 44px 30px;
+  padding: 24px;
   height: auto;
 
   display: flex;
   flex-direction: column;
   flex: 1;
 
-  border-radius: var(--40, 40px);
-  border: 1px solid var(--black-5, #ff9937);
-  background-color: #fafaf7;
+  border-radius: 16px;
+  border: 1px solid #3c3d3f;
+  background-color: #141517;
+  // background: url("./img/contact_bg.jpg") center center / cover no-repeat;
 
   @include media.media-md {
     min-width: 420px;
@@ -100,23 +102,19 @@
 }
 
 .logo {
-  width: 200px;
+  width: 132px;
   height: auto;
   fill: #fff;
-
-  @include media.media-md {
-    width: 260px;
-  }
 }
 
 .title {
-  margin-top: 88px;
+  margin-top: 64px;
 
-  color: rgba(17, 17, 17, 0.8);
-  font-family: Inter;
-  font-size: 32px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 42px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
 
   @include media.media-md {
@@ -125,13 +123,13 @@
 }
 
 .description {
-  margin-top: 20px;
+  margin-top: 24px;
 
-  color: rgba(17, 17, 17, 0.5);
-  font-family: Inter;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.16px;
 }
 
@@ -145,37 +143,29 @@
 
 .contactItem {
   display: flex;
-  align-items: center;
-  column-gap: 14px;
+  flex-direction: column;
+  column-gap: 10px;
+}
+
+.contactTitle {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
 }
 
 .contact {
-  color: rgba(17, 17, 17, 0.8);
-
-  font-family: Inter;
+  color: #fff;
+  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.32px;
-  text-decoration: none;
-}
-
-.icon {
-  margin-top: 3px;
-
-  width: 24px;
-  height: auto;
-
-  flex-shrink: 0;
-  align-self: start;
-
-  fill: rgba(17, 17, 17, 0.8);
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
 }
 
 .form {
-  // padding: 50px 50px 30px;
-  padding: 48px 20px 32px;
-
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -183,6 +173,17 @@
   @include media.media-md {
     padding: 60px 60px 30px 60px;
   }
+}
+
+.formTitle {
+  color: var(--text-primary, #fff);
+
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: 0.48px;
 }
 
 .formGroup {
@@ -203,43 +204,24 @@
 }
 
 .input {
-  margin-top: 4px;
-  padding-bottom: 12px;
-  width: 100%;
+  position: relative;
+  padding: 8px 16px;
 
-  color: #111;
-  font-family: Inter;
-  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--Light-gray, #3c3d3f);
+  background: var(--Gray, #141517);
+
+  color: var(--White-Text, #ececec);
+  font-family: Outfit;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 142.857% */
-
-  border: none;
-  border-radius: 0px;
-  outline: none;
-  border-bottom: 1px solid #fe6a2e;
-
-  &:placeholder {
-    color: #8d8d8d;
-  }
-
-  &:focus {
-    border-bottom: 1px solid #00375f;
-  }
-
-  @include media.media-md {
-    width: 300px;
-  }
+  font-weight: 400;
+  line-height: 32px; /* 200% */
+  letter-spacing: 0.16px;
 }
 
 .textareaGroup {
-  margin-top: 58px;
-  margin-bottom: 80px;
-  // margin-bottom: 88px;
-
-  // @include media.media-md {
-  //   margin-bottom: 80px;
-  // }
+  margin-bottom: 38px;
 }
 
 .textarea {
@@ -248,6 +230,8 @@
 }
 
 .submitBtn {
+  @include mix.btn-filled;
+  padding: 20px 40px;
 }
 
 .error {
