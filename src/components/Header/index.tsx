@@ -13,8 +13,6 @@ const Header: FC<HeaderInterface> = ({ darkBG }) => {
   const { setShowForm } = useAppContext();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [fixMenu, setFixMenu] = useState<boolean>(false);
-  const HeaderRef = useRef<HTMLElement>(null);
-  const MobileNavRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -40,22 +38,11 @@ const Header: FC<HeaderInterface> = ({ darkBG }) => {
     } else {
       window.document.body.style.overflow = "";
     }
-  }, [isMenuOpen, MobileNavRef]);
-
-  useEffect(() => {
-    if (MobileNavRef.current) {
-      if (isMenuOpen) {
-        MobileNavRef.current.style.height = `${MobileNavRef.current?.scrollHeight}px`;
-      } else {
-        MobileNavRef.current.style.height = "0px";
-      }
-    }
-  }, [isMenuOpen, MobileNavRef]);
+  }, [isMenuOpen]);
 
   return (
     <>
       <header
-        ref={HeaderRef}
         className={cn(
           styles.Header,
           { [styles.fixed]: fixMenu },
@@ -105,7 +92,6 @@ const Header: FC<HeaderInterface> = ({ darkBG }) => {
           </div>
 
           <nav
-            ref={MobileNavRef}
             className={cn(styles.Nav, styles.Mobile, {
               [styles.open]: isMenuOpen,
             })}
