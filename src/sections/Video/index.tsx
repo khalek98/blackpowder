@@ -3,51 +3,51 @@ import React, { useEffect, useRef } from "react";
 import styles from "./Video.module.scss";
 
 const Video = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [playVideo, setPlayVideo] = React.useState(false);
-  const [showControls, setShowControls] = React.useState(false);
+  // const videoRef = useRef<HTMLVideoElement | null>(null);
+  // const [playVideo, setPlayVideo] = React.useState(false);
+  // const [showControls, setShowControls] = React.useState(false);
 
-  useEffect(() => {
-    const handleScroll = async () => {
-      if (!videoRef.current || playVideo) return;
+  // useEffect(() => {
+  //   const handleScroll = async () => {
+  //     if (!videoRef.current || playVideo) return;
 
-      videoRef.current.load();
+  //     videoRef.current.load();
 
-      const rect = videoRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+  //     const rect = videoRef.current.getBoundingClientRect();
+  //     const windowHeight = window.innerHeight;
 
-      const triggerPoint = windowHeight * 0.2;
+  //     const triggerPoint = windowHeight * 0.2;
 
-      if (rect.top < windowHeight - triggerPoint) {
-        videoRef.current.currentTime = 0;
+  //     if (rect.top < windowHeight - triggerPoint) {
+  //       videoRef.current.currentTime = 0;
 
-        setPlayVideo(true);
-      }
-    };
+  //       setPlayVideo(true);
+  //     }
+  //   };
 
-    if (videoRef.current) {
-      videoRef.current.addEventListener("playing", () => {
-        videoRef.current?.play();
-      });
-    }
+  //   if (videoRef.current) {
+  //     videoRef.current.addEventListener("playing", () => {
+  //       videoRef.current?.play();
+  //     });
+  //   }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [playVideo]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [playVideo]);
 
   return (
     <section id="video" className={styles.section}>
       <video
-        onClick={() => setShowControls(true)}
-        onMouseLeave={() => setShowControls(false)}
-        onMouseEnter={() => setShowControls(true)}
-        ref={videoRef}
+        // onClick={() => setShowControls(true)}
+        // onMouseLeave={() => setShowControls(false)}
+        // onMouseEnter={() => setShowControls(true)}
+        // ref={videoRef}
         className={styles.video}
-        autoPlay={true}
+        autoPlay
         playsInline
-        controls={showControls}
+        // controls={showControls}
         controlsList="nodownload"
-        poster="/satellite_poster.png"
+        // poster="/satellite_poster.png"
         muted
         loop
       >
