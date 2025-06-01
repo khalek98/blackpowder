@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Head from "next/head";
 
-import { Hero, About, Video, Partners } from "@/sections";
 import { Hero, About, Video, Partners, CTA, Services } from "@/sections";
 import MainLayout from "@/layouts/MainLayout";
 
@@ -18,6 +17,7 @@ const Home: FC = () => {
         <Video />
         <Partners />
         <CTA />
+        <Services />
       </MainLayout>
     </>
   );
