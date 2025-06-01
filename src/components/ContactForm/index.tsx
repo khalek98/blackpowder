@@ -94,38 +94,32 @@ const ContactForm = () => {
             </p>
 
             <ul className={styles.contactList}>
-              {/* <li className={styles.contactItem}>
-                <PhoneIcon className={styles.icon} />
-                <a className={styles.contact} href="tel:+972547447133">
-                  +972-54-7447133
-                </a>
-              </li> */}
               <li className={styles.contactItem}>
-                <MailIcon className={styles.icon} />
-                <a className={styles.contact} href="mailto:info@click-ora.com">
-                  info@click-ora.com
+                <h4 className={styles.contactTitle}>Email:</h4>
+                <a
+                  className={styles.contact}
+                  href="mailto:info@blackpowderglobal.com"
+                >
+                  info@blackpowderglobal.com
                 </a>
               </li>
               <li className={styles.contactItem}>
-                <LocationIcon className={styles.icon} />
+                <h4 className={styles.contactTitle}>Address:</h4>
                 <address className={styles.contact}>
-                  Flat/Rm A 12/F Zj 300, Lockhart Road, Wan Chai, Hong Kong,
-                  China
+                  Str. Kavaja, Delijorgj, Tirana, Albania
                 </address>
               </li>
             </ul>
           </div>
 
           <form className={styles.form}>
+            <h3 className={styles.formTitle}>Let's Talk</h3>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="firstName">
-                First Name
-              </label>
               <input
                 className={styles.input}
                 id="firstName"
                 type="text"
-                placeholder="Your first name"
+                placeholder="First name"
                 {...register("firstName", {
                   required: "First name is required",
                   onChange: () => trigger("firstName"),
@@ -137,14 +131,11 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="firstName">
-                Last Name
-              </label>
               <input
                 className={styles.input}
                 id="lastName"
                 type="text"
-                placeholder="Your last name"
+                placeholder="Last Name"
                 {...register("lastName", {
                   required: "Last name is required",
                   onChange: () => trigger("lastName"),
@@ -156,14 +147,11 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="email">
-                Email
-              </label>
               <input
                 className={styles.input}
                 id="email"
                 type="text"
-                placeholder="Your email"
+                placeholder="Email"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -179,14 +167,11 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="phone">
-                Phone
-              </label>
               <input
                 className={styles.input}
                 id="phone"
                 type="tel"
-                placeholder="Your phone number"
+                placeholder="Phone number"
                 {...register("phone", {
                   validate: (value) => {
                     if (!value) return true;
@@ -202,15 +187,12 @@ const ContactForm = () => {
             </div>
 
             <div className={cn(styles.formGroup, styles.textareaGroup)}>
-              <label className={styles.label} htmlFor="message">
-                Message
-              </label>
               <textarea
                 rows={2}
                 maxLength={300}
                 className={cn(styles.input, styles.textarea)}
                 id="message"
-                placeholder="Write your message.."
+                placeholder="Message"
                 {...register("message", {
                   required: "Message is required",
                   onChange: () => trigger("message"),
