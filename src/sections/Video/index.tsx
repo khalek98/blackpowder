@@ -47,7 +47,7 @@ const Video = () => {
         playsInline
         // controls={showControls}
         controlsList="nodownload"
-        // poster="/satellite_poster.png"
+        poster="/satellite_poster.webp"
         muted
         loop
       >
