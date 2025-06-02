@@ -109,13 +109,7 @@ const Partners = () => {
         width={TrianglesBGImg.width}
         height={TrianglesBGImg.height}
       />
-      <Image
-        src={TrianglesBGImg}
-        alt="Triangles background"
-        className={cn(styles.triangles, styles.triangles_2)}
-        width={TrianglesBGImg.width}
-        height={TrianglesBGImg.height}
-      />
+
       <div className={cn(styles.content)}>
         <div className={styles.head}>
           <h2 className={styles.label}>Working Together</h2>

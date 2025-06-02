@@ -58,8 +58,7 @@ const Contact = () => {
           <p className={styles.description}>
             Whether you're exploring a specific solution, need expert insight,
             or want to learn more about how we can support your operations —
-            we're here to help.Fill out the form, and our team will reach out to
-            discuss your needs in detail and guide you through the next steps.
+            we're here to help.
           </p>
           <p className={styles.description}>
             Fill out the form, and our team will reach out to discuss your needs
@@ -152,25 +151,27 @@ const Contact = () => {
             )}
           </div>
 
-          <label className={styles.checkboxLabel}>
-            <input
-              className={styles.checkbox}
-              type="checkbox"
-              {...register("termsCheckbox", { required: true })}
-            />
-            <span className={styles.checkmark}></span>
-            By submitting this form, you consent to Black Powder Ltd and its
-            subsidiaries processing your data.
-          </label>
+          <div className={styles.formFooter}>
+            <label className={styles.checkboxLabel}>
+              <input
+                className={styles.checkbox}
+                type="checkbox"
+                {...register("termsCheckbox", { required: true })}
+              />
+              <span className={styles.checkmark}></span>
+              By submitting this form, you consent to Black Powder Ltd and its
+              subsidiaries processing your data.
+            </label>
 
-          <button
-            onClick={handleSubmit(onSubmit)}
-            className={styles.submitBtn}
-            disabled={!watch("termsCheckbox")}
-            type="submit"
-          >
-            Contact Us
-          </button>
+            <button
+              onClick={handleSubmit(onSubmit)}
+              className={styles.submitBtn}
+              disabled={!watch("termsCheckbox")}
+              type="submit"
+            >
+              Contact Us
+            </button>
+          </div>
         </form>
       </div>
     </section>

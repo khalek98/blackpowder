@@ -80,6 +80,10 @@
   @include media.media-md {
     height: 48px;
   }
+
+  @include media.media-lg {
+    height: 56px;
+  }
 }
 
 .Nav {
@@ -154,18 +158,23 @@
 
   transition: all 0.2s ease;
 
-  @include media.media-md {
-    font-size: 16px;
+  @include media.media-lg {
+    font-size: 20px;
   }
 }
 
 .buttonContact {
+  @include mix.btn;
+  padding: 12px 40px;
   display: none;
 
   &.mobile {
-    @include mix.btn;
     margin-top: auto;
-    padding: 12px 40px;
+  }
+
+  @include media.media-lg {
+    margin-top: none;
+    display: block;
   }
 }
 
