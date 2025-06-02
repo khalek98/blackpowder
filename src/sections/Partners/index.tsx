@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-
-import { IconProps } from "@/assets/icons/IconProps";
+import { motion, Variants } from "motion/react";
 
 import styles from "./Partners.module.scss";
 
+import { IconProps } from "@/assets/icons/IconProps";
 import AireyeLogo from "./logos/AireyeLogo";
 import XtendLogo from "./logos/XtendLogo";
 import ISILogo from "./logos/ISILogo";
@@ -137,7 +137,14 @@ const Partners = () => {
                     [styles.show]: showMore,
                   })}
                 >
-                  <a
+                  <motion.a
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: index * 0.1, duration: 1 },
+                    }}
+                    viewport={{ once: true, amount: 0.5 }}
                     className={styles.logoLink}
                     href={partnerLink}
                     target="_blank"
@@ -153,7 +160,7 @@ const Partners = () => {
                         className={cn(styles.logo, styles.logoImg)}
                       />
                     ) : null}
-                  </a>
+                  </motion.a>
                 </div>
               )
             )}

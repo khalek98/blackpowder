@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import cn from "classnames";
 import Image from "next/image";
+import { motion, Variants } from "motion/react";
 
 import styles from "./Services.module.scss";
 
@@ -12,102 +13,104 @@ import CybersecurityIMG from "./img/cybersecurity.jpg";
 import ManufacturingSolutionsIMG from "./img/manufacturing_solutions.jpg";
 import TrianglesBGImg from "@/assets/img/triangles_bg.png";
 
+const itemLeft: Variants = {};
+
 const solutionList = [
   {
     title: "Data & Command Platforms",
     img: DataCommandPlatformIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         We design and deploy modular platforms that give institutions full
         operational oversight. These systems consolidate data from sensors,
         personnel, satellite feeds, and third-party sources into one secure
         environment—enabling real-time monitoring, coordination, and informed
         decision-making.
-      </p>,
-      <p className={styles.solutionDescription}>
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
         Whether you're managing public safety, logistics, or environmental
         operations, our platforms are scalable, reliable, and tailored to your
         specific mission.
-      </p>,
+      </motion.p>,
     ],
   },
   {
     title: "Secure Communication Systems",
     img: SecureCommunicationSystemsIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         Our encrypted communication infrastructure ensures uninterrupted and
         confidential connectivity—even in remote, disrupted, or sensitive
         environments. Built for low-bandwidth scenarios, our systems support
         secure mobile, satellite, and radio communications.
-      </p>,
-      <p className={styles.solutionDescription}>
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
         Used by government agencies, crisis response teams, and infrastructure
         operators, our solutions are designed to function under pressure when it
         matters most.
-      </p>,
+      </motion.p>,
     ],
   },
   {
     title: "Satellite Services",
     img: SatelliteServicesIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         We provide advanced satellite intelligence services with global
         coverage. From infrastructure surveillance to environmental monitoring
         and emergency response, our systems translate satellite data into
         actionable insights.
-      </p>,
-      <p className={styles.solutionDescription}>
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
         This includes integration of imagery, heat mapping, and radar data to
         support real-time decisions in complex geographic and operational
         contexts.
-      </p>,
+      </motion.p>,
     ],
   },
   {
     title: "Drone & Anti-Drone Technologies",
     img: DroneAntiDroneTechnologiesIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         Our autonomous aerial systems are designed for tasks such as area
         surveillance, infrastructure inspection, mapping, and operational
         oversight. They feature long-range capabilities, real-time video, and
         autonomous route planning.
-      </p>,
-      <p className={styles.solutionDescription}>
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
         To help organizations manage airspace risks, our anti-drone systems
         offer detection, tracking, and mitigation tools—ensuring the security of
         critical zones and assets.
-      </p>,
+      </motion.p>,
     ],
   },
   {
     title: "Cybersecurity",
     img: CybersecurityIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         We offer multi-layered cybersecurity solutions to protect digital
         infrastructure from evolving threats. From threat detection and risk
         management to encryption and compliance tools, our systems are built to
         secure sensitive data and ensure uninterrupted operations.
-      </p>,
-      <p className={styles.solutionDescription}>
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
         Trusted by institutions in energy, transportation, public
         administration, and beyond, we help organizations strengthen their
         digital resilience.
-      </p>,
+      </motion.p>,
     ],
   },
   {
     title: "Manufacturing Solutions",
     img: ManufacturingSolutionsIMG,
     description: [
-      <p className={styles.solutionDescription}>
+      <motion.p className={styles.solutionDescription}>
         We deliver high-precision, industrial-grade manufacturing services that
         support complex infrastructure and operational needs.
-      </p>,
-      <div className={styles.solutionDescriptionWithList}>
+      </motion.p>,
+      <motion.div className={styles.solutionDescriptionWithList}>
         <p className={styles.solutionDescription}>
           Our production capabilities include:
         </p>
@@ -126,7 +129,7 @@ const solutionList = [
             operations
           </li>
         </ul>
-      </div>,
+      </motion.div>,
     ],
   },
 ];
@@ -158,18 +161,43 @@ const Services = () => {
         <ul className={styles.solutionList}>
           {solutionList.map((solution, index) => (
             <li className={styles.solutionItem} key={index}>
-              <h4 className={styles.solutionTitle}>{solution.title}</h4>
+              <motion.h4
+                initial={{
+                  opacity: 0,
+                  transform:
+                    index % 2 === 0 ? "translateX(-10px)" : "translateX(10px)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transform: "translateX(0)",
+                }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                className={styles.solutionTitle}
+              >
+                {solution.title}
+              </motion.h4>
               <img
                 src={solution.img.src}
                 alt={solution.title}
                 className={styles.solutionImage}
               />
 
-              <div className={styles.solutionDescriptionWrapper}>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  transform:
+                    index % 2 === 0 ? "translateX(-10px)" : "translateX(10px)",
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                transition={{ duration: 1 }}
+                className={styles.solutionDescriptionWrapper}
+              >
                 {solution.description.map((description, index) => (
                   <Fragment key={index}>{description}</Fragment>
                 ))}
-              </div>
+              </motion.div>
             </li>
           ))}
         </ul>

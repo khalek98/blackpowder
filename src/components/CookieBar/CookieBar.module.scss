@@ -48,6 +48,8 @@
 }
 
 .Button {
+  @include mix.btn-filled;
+  padding: 8px 20px;
   width: max-content;
 }
 
