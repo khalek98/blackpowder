@@ -101,6 +101,7 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 50px;
 
@@ -158,6 +159,10 @@
 
   transition: all 0.2s ease;
 
+  @include media.media-md {
+    font-size: 18px;
+  }
+
   @include media.media-lg {
     font-size: 20px;
   }
@@ -165,16 +170,23 @@
 
 .buttonContact {
   @include mix.btn;
-  padding: 12px 40px;
+  margin-top: auto;
+  padding: 8px 60px;
   display: none;
+  width: 100%;
 
   &.mobile {
-    margin-top: auto;
+    display: flex;
   }
 
-  @include media.media-lg {
+  @include media.media-xs {
+    width: max-content;
+  }
+
+  @include media.media-md {
     margin-top: none;
     display: block;
+    padding: 8px 40px;
   }
 }
 
