@@ -28,6 +28,16 @@
   &.open {
     height: 100vh !important;
   }
+
+  &.FiledBg {
+    background-color: #000302;
+
+    &.fixed,
+    &.open {
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 3, 2, 0.8);
+    }
+  }
 }
 
 .overlay {
@@ -83,8 +93,7 @@
     height: 100vh;
     height: 100dvh;
     z-index: 0;
-    padding: 0 20px;
-    padding-bottom: 80px;
+    padding: 30px 20px;
 
     display: flex;
     flex-direction: column;
