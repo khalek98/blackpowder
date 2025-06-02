@@ -30,6 +30,9 @@ const Footer = () => {
               >
                 info@blackpowderglobal.com
               </a>
+              <a className={styles.InfoValue} href="tel:+355688080040">
+                + 355 68 808 0040
+              </a>
             </div>
             <div className={styles.InfoItem}>
               <div className={styles.InfoTitle}>Address:</div>

@@ -56,7 +56,7 @@
   order: 3;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 
   width: 100%;
 
@@ -80,10 +80,11 @@
 .InfoItem {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .InfoTitle {
+  margin-bottom: 6px;
   color: #fff;
 
   font-family: Montserrat;
