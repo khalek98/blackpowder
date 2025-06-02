@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
 
-import MailIcon from "@icons/mail.svg";
-import LocationIcon from "@icons/location.svg";
 import CloseIcon from "./close.svg";
 import { useAppContext } from "@/context/AppContext";
 
@@ -16,6 +14,7 @@ interface IForm {
   email: "";
   phone?: "";
   message: "";
+  termsCheckbox: boolean;
 }
 
 const ContactForm = () => {
@@ -24,6 +23,7 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
+    watch,
     reset,
     trigger,
     formState: { errors },
@@ -53,7 +53,7 @@ const ContactForm = () => {
     setFormStatus("loading");
 
     try {
-      await fetch("/mail.php", {
+      await fetch("/mailer/smart.php", {
         method: "POST",
         body: JSON.stringify(data),
       })
@@ -117,9 +117,8 @@ const ContactForm = () => {
             <div className={styles.formGroup}>
               <input
                 className={styles.input}
-                id="firstName"
                 type="text"
-                placeholder="First name"
+                placeholder="*First name"
                 {...register("firstName", {
                   required: "First name is required",
                   onChange: () => trigger("firstName"),
@@ -133,9 +132,8 @@ const ContactForm = () => {
             <div className={styles.formGroup}>
               <input
                 className={styles.input}
-                id="lastName"
                 type="text"
-                placeholder="Last Name"
+                placeholder="*Last Name"
                 {...register("lastName", {
                   required: "Last name is required",
                   onChange: () => trigger("lastName"),
@@ -149,9 +147,8 @@ const ContactForm = () => {
             <div className={styles.formGroup}>
               <input
                 className={styles.input}
-                id="email"
                 type="text"
-                placeholder="Email"
+                placeholder="*Email"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -169,7 +166,6 @@ const ContactForm = () => {
             <div className={styles.formGroup}>
               <input
                 className={styles.input}
-                id="phone"
                 type="tel"
                 placeholder="Phone number"
                 {...register("phone", {
@@ -191,8 +187,7 @@ const ContactForm = () => {
                 rows={2}
                 maxLength={300}
                 className={cn(styles.input, styles.textarea)}
-                id="message"
-                placeholder="Message"
+                placeholder="*Message"
                 {...register("message", {
                   required: "Message is required",
                   onChange: () => trigger("message"),
@@ -203,10 +198,22 @@ const ContactForm = () => {
               )}
             </div>
 
+            <label className={styles.checkboxLabel}>
+              <input
+                className={styles.checkbox}
+                type="checkbox"
+                {...register("termsCheckbox", { required: true })}
+              />
+              <span className={styles.checkmark}></span>
+              By submitting this form, you consent to Black Powder Ltd and its
+              subsidiaries processing your data.
+            </label>
+
             <button
               onClick={handleSubmit(onSubmit)}
               className={styles.submitBtn}
               type="submit"
+              disabled={!watch("termsCheckbox")}
             >
               Send Message
             </button>

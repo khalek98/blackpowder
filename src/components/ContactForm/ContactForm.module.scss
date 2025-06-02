@@ -92,7 +92,6 @@
   border-radius: 16px;
   border: 1px solid #3c3d3f;
   background-color: #141517;
-  // background: url("./img/contact_bg.jpg") center center / cover no-repeat;
 
   @include media.media-md {
     min-width: 420px;
@@ -169,6 +168,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  row-gap: 24px;
 
   @include media.media-md {
     padding: 60px 60px 30px 60px;
@@ -188,7 +188,6 @@
 
 .formGroup {
   position: relative;
-  margin-top: 28px;
 
   display: flex;
   flex-direction: column;
@@ -220,18 +219,76 @@
   letter-spacing: 0.16px;
 }
 
-.textareaGroup {
-  margin-bottom: 38px;
-}
-
 .textarea {
   resize: none;
   height: auto;
 }
 
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 12px;
+
+  color: var(--White-Text, #ececec);
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.14px;
+
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkmark {
+  margin-top: 4px;
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border: 1px solid #ececec;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    width: 12px;
+    height: 12px;
+
+    background-color: #fff;
+    border-radius: 2px;
+
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.checkbox:checked + .checkmark {
+  &::after {
+    opacity: 1;
+  }
+}
+
 .submitBtn {
   @include mix.btn-filled;
-  padding: 20px 40px;
+  padding: 12px 40px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #3c3d3f;
+  }
 }
 
 .error {
