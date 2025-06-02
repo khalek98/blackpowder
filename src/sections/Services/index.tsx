@@ -171,7 +171,7 @@ const Services = () => {
                   opacity: 1,
                   transform: "translateX(0)",
                 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
                 viewport={{ once: true, amount: 0.5 }}
                 className={styles.solutionTitle}
               >
@@ -191,7 +191,7 @@ const Services = () => {
                 }}
                 viewport={{ once: true, amount: 0.5 }}
                 whileInView={{ opacity: 1, transform: "translateX(0)" }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, delay: 0.3 }}
                 className={styles.solutionDescriptionWrapper}
               >
                 {solution.description.map((description, index) => (
