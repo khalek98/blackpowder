@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import cn from "classnames";
+import Image from "next/image";
 
 import styles from "./Services.module.scss";
 
@@ -9,6 +10,7 @@ import SatelliteServicesIMG from "./img/satellite_services.jpg";
 import DroneAntiDroneTechnologiesIMG from "./img/drone_anti-drone_technologies.jpg";
 import CybersecurityIMG from "./img/cybersecurity.jpg";
 import ManufacturingSolutionsIMG from "./img/manufacturing_solutions.jpg";
+import TrianglesBGImg from "@/assets/img/triangles_bg.png";
 
 const solutionList = [
   {
@@ -132,6 +134,21 @@ const solutionList = [
 const Services = () => {
   return (
     <section id="services" className={styles.section}>
+      <Image
+        src={TrianglesBGImg}
+        alt="Triangles background"
+        className={cn(styles.triangles, styles.triangles_1)}
+        width={TrianglesBGImg.width}
+        height={TrianglesBGImg.height}
+      />
+      <Image
+        src={TrianglesBGImg}
+        alt="Triangles background"
+        className={cn(styles.triangles, styles.triangles_2)}
+        width={TrianglesBGImg.width}
+        height={TrianglesBGImg.height}
+      />
+
       <div className={cn("container", styles.container)}>
         <div className={styles.head}>
           <h2 className={styles.label}>What we do</h2>

@@ -18,6 +18,7 @@ import SilverShadowLogo from "./logos/silver_shadow_logo.png";
 import RoboticanLogo from "./logos/Robotican.png";
 import PermoidLogo from "./logos/permoid_logo.png";
 import HOSLogo from "./logos/HOSLogo";
+import TrianglesBGImg from "@/assets/img/triangles_bg.png";
 
 const partnerLogos: {
   name: string;
@@ -101,6 +102,20 @@ const Partners = () => {
 
   return (
     <section id="partners" className={styles.section}>
+      <Image
+        src={TrianglesBGImg}
+        alt="Triangles background"
+        className={cn(styles.triangles, styles.triangles_1)}
+        width={TrianglesBGImg.width}
+        height={TrianglesBGImg.height}
+      />
+      <Image
+        src={TrianglesBGImg}
+        alt="Triangles background"
+        className={cn(styles.triangles, styles.triangles_2)}
+        width={TrianglesBGImg.width}
+        height={TrianglesBGImg.height}
+      />
       <div className={cn(styles.content)}>
         <div className={styles.head}>
           <h2 className={styles.label}>Working Together</h2>

@@ -4,9 +4,29 @@
 
 .section {
   position: relative;
+  overflow: hidden;
 
   background-color: #020512;
   padding: 80px 0;
+}
+
+.triangles {
+  position: absolute;
+  z-index: 0;
+  max-inline-size: none;
+  object-fit: contain;
+
+  &_1 {
+    top: 0;
+    left: -66px;
+    rotate: 180deg;
+  }
+
+  &_2 {
+    rotate: 180deg;
+    top: 1800px;
+    right: -160px;
+  }
 }
 
 .container {
