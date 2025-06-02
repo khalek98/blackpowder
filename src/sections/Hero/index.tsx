@@ -9,20 +9,25 @@ const Hero = () => {
 
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.background}></div>
+      <motion.div
+        initial={{ transform: "scale(1)" }}
+        whileInView={{ transform: "scale(1.1)" }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className={styles.background}
+      ></motion.div>
       <div className={cn("container", styles.container)}>
         <motion.h1
           initial={{ opacity: 0, transform: "translateY(10px)" }}
-          animate={{ opacity: 1, transform: "translateY(0)" }}
-          transition={{ delay: 1, duration: 1 }}
+          whileInView={{ opacity: 1, transform: "translateY(0)" }}
+          transition={{ delay: 0.2, duration: 1 }}
           className={styles.title}
         >
           Engineering Resilience for a Complex World
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, transform: "translateY(10px)" }}
-          animate={{ opacity: 1, transform: "translateY(0)" }}
-          transition={{ delay: 1.2, duration: 1 }}
+          whileInView={{ opacity: 1, transform: "translateY(0)" }}
+          transition={{ delay: 0.3, duration: 1 }}
           className={styles.description}
         >
           Global technology solutions built for national security, critical
@@ -31,8 +36,8 @@ const Hero = () => {
 
         <motion.button
           initial={{ opacity: 0, transform: "translateY(10px)" }}
-          animate={{ opacity: 1, transform: "translateY(0)" }}
-          transition={{ delay: 1.4, duration: 1 }}
+          whileInView={{ opacity: 1, transform: "translateY(0)" }}
+          transition={{ delay: 0.6, duration: 1 }}
           className={styles.button}
           onClick={() => setShowForm(true)}
         >
