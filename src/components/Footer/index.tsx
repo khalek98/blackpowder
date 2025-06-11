@@ -23,7 +23,7 @@ const Footer = () => {
 
           <div className={styles.Info}>
             <div className={styles.InfoItem}>
-              <div className={styles.InfoTitle}>Email:</div>
+              <div className={styles.InfoTitle}>Contacts:</div>
               <a className={styles.InfoValue} href="mailto:info@blackpowderglobal.com">
                 info@blackpowderglobal.com
               </a>
