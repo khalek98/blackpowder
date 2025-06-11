@@ -32,6 +32,9 @@ const Contact = () => {
 
     try {
       await fetch('/api/sendMail', {
+        headers: {
+          'Content-Type': 'application/json',
+        },
         method: 'POST',
         body: JSON.stringify(data),
       })

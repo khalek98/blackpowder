@@ -62,6 +62,9 @@ const ContactForm = () => {
     try {
       await fetch('/api/sendMail', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(data),
       })
         .then((res) => {
