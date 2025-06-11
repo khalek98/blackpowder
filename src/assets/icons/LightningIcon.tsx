@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { IconProps } from "./IconProps";
+import { IconProps } from './IconProps';
 
 const LightningIcon: React.FC<IconProps> = ({ ...props }) => {
   return (
@@ -24,12 +24,7 @@ const LightningIcon: React.FC<IconProps> = ({ ...props }) => {
           <stop offset="0.895" stopColor="#FE6A2E" />
         </radialGradient>
         <clipPath id="clip0_488_4248">
-          <rect
-            width="9.95361"
-            height="15.694"
-            fill="white"
-            transform="translate(0.523193 0.152832)"
-          />
+          <rect width="9.95361" height="15.694" fill="#fff" transform="translate(0.523193 0.152832)" />
         </clipPath>
       </defs>
     </svg>

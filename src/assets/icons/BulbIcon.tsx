@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { IconProps } from "./IconProps";
+import { IconProps } from './IconProps';
 
 const BulbIcon: React.FC<IconProps> = ({ ...props }) => {
   return (
@@ -39,12 +39,7 @@ const BulbIcon: React.FC<IconProps> = ({ ...props }) => {
           <stop offset="0.895" stopColor="#FE6A2E" />
         </radialGradient>
         <clipPath id="clip0_488_4272">
-          <rect
-            width="11.0529"
-            height="19.4346"
-            fill="white"
-            transform="translate(0.122009 0.0739746)"
-          />
+          <rect width="11.0529" height="19.4346" fill="#fff" transform="translate(0.122009 0.0739746)" />
         </clipPath>
       </defs>
     </svg>

@@ -1,6 +1,6 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
-@use "@/styles/_mixins.scss" as mix;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
+@use '@/styles/_mixins.scss' as mix;
 
 .hero {
   position: relative;
@@ -29,22 +29,12 @@
       rgba(3, 7, 24, 0.7) 35.81%,
       rgba(3, 7, 24, 0.62) 47.32%
     ),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 69.66%,
-      rgba(0, 0, 0, 0.8) 83.29%,
-      #000 86.88%
-    ),
-    url("./img/hero_bg-min.webp") center center / cover no-repeat;
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 69.66%, rgba(0, 0, 0, 0.8) 83.29%, #000 86.88%),
+    url('./img/hero_bg-min.webp') center center / cover no-repeat;
 
   @include media.media-lg {
-    background: linear-gradient(
-        350deg,
-        #030718 14.88%,
-        rgba(3, 7, 24, 0.7) 49.83%,
-        rgba(3, 7, 24, 0.7) 88.32%
-      ),
-      url("./img/hero_bg-min.webp") center center / cover no-repeat;
+    background: linear-gradient(350deg, #030718 14.88%, rgba(3, 7, 24, 0.7) 49.83%, rgba(3, 7, 24, 0.7) 88.32%),
+      url('./img/hero_bg-min.webp') center center / cover no-repeat;
   }
 }
 

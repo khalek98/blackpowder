@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { IconProps } from "./IconProps";
+import { IconProps } from './IconProps';
 
 const DiagramIcon: React.FC<IconProps> = ({ ...props }) => {
   return (
@@ -24,12 +24,7 @@ const DiagramIcon: React.FC<IconProps> = ({ ...props }) => {
           <stop offset="0.895" stopColor="#FE6A2E" />
         </radialGradient>
         <clipPath id="clip0_488_4265">
-          <rect
-            width="16.7634"
-            height="16.5287"
-            fill="white"
-            transform="translate(0.33783 0.526855)"
-          />
+          <rect width="16.7634" height="16.5287" fill="#fff" transform="translate(0.33783 0.526855)" />
         </clipPath>
       </defs>
     </svg>

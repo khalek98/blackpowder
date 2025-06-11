@@ -1,6 +1,6 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
-@use "@/styles/_mixins.scss" as mix;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
+@use '@/styles/_mixins.scss' as mix;
 
 .CookieBar {
   z-index: 999;
@@ -27,7 +27,7 @@
   line-height: 24px;
   font-weight: 300;
   text-align: center;
-  color: #fff;
+  color: #f9f9f9;
 
   @include media.media-lg {
     grid-template-columns: repeat(2, max-content);
@@ -57,7 +57,7 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
-  color: #fff;
+  color: #f9f9f9;
   text-decoration: underline;
 
   transition: text-decoration 0.3s ease-in-out;

@@ -1,20 +1,20 @@
-import { IconProps } from "@/assets/icons/IconProps";
-import React from "react";
+import { IconProps } from '@/assets/icons/IconProps';
+import React from 'react';
 
 const SANLogo: React.FC<IconProps> = ({ ...props }) => {
   const logoRef = React.useRef<SVGSVGElement>(null);
 
   const handleHoverOn = () => {
     if (logoRef.current) {
-      logoRef.current.style.fill = "#E2352C";
-      logoRef.current.style.opacity = "0.8";
+      logoRef.current.style.fill = '#E2352C';
+      logoRef.current.style.opacity = '0.8';
     }
   };
 
   const handleHoverOut = () => {
     if (logoRef.current) {
-      logoRef.current.style.fill = "#fff";
-      logoRef.current.style.opacity = "0.8";
+      logoRef.current.style.fill = '#fff';
+      logoRef.current.style.opacity = '0.8';
     }
   };
 

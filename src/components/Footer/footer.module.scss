@@ -1,16 +1,12 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
 
 .Footer {
   position: relative;
   padding: 50px 0 20px;
 
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.64) 0.09%,
-      rgba(0, 0, 0, 0.8) 85.42%
-    ),
-    url("./img/footer_bg-min.webp") lightgray 50% / cover no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.64) 0.09%, rgba(0, 0, 0, 0.8) 85.42%),
+    url('./img/footer_bg-min.webp') lightgray 50% / cover no-repeat;
 
   @include media.media-md {
     padding: 50px 0;
@@ -85,7 +81,7 @@
 
 .InfoTitle {
   margin-bottom: 6px;
-  color: #fff;
+  color: #f9f9f9;
 
   font-family: Montserrat;
   font-size: 16px;
@@ -96,7 +92,7 @@
 }
 
 .InfoValue {
-  color: #fff;
+  color: #f9f9f9;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
@@ -116,7 +112,7 @@
   height: 50px;
 
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border: none;
   cursor: pointer;
 
@@ -155,7 +151,7 @@
 .Copyright {
   order: 2;
 
-  color: #fff;
+  color: #f9f9f9;
   font-family: Montserrat;
   font-size: 12px;
   font-style: normal;
@@ -185,7 +181,7 @@
 }
 
 .Link {
-  color: #fff;
+  color: #f9f9f9;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;

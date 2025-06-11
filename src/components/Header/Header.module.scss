@@ -1,6 +1,6 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
-@use "@/styles/_mixins.scss" as mix;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
+@use '@/styles/_mixins.scss' as mix;
 
 .Header {
   position: fixed;
@@ -148,7 +148,7 @@
 .MenuLink {
   padding: 0 12px;
 
-  color: #fff;
+  color: #f9f9f9;
   font-family: Outfit;
   font-size: 24px;
   font-style: normal;
@@ -206,7 +206,7 @@
     height: 3px;
 
     border-radius: 10px;
-    background: #fff;
+    background: #f9f9f9;
 
     transition: all 0.3s ease;
   }

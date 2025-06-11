@@ -1,18 +1,18 @@
-import { IconProps } from "@/assets/icons/IconProps";
-import React from "react";
+import { IconProps } from '@/assets/icons/IconProps';
+import React from 'react';
 
 const IAILogo: React.FC<IconProps> = ({ ...props }) => {
   const logoRef = React.useRef<SVGSVGElement>(null);
 
   const handleHoverOn = () => {
     if (logoRef.current) {
-      logoRef.current.style.fill = "#2E77B4";
+      logoRef.current.style.fill = '#2E77B4';
     }
   };
 
   const handleHoverOut = () => {
     if (logoRef.current) {
-      logoRef.current.style.fill = "#fff";
+      logoRef.current.style.fill = '#fff';
     }
   };
 

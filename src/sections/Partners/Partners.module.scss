@@ -257,10 +257,9 @@
 
 .airEye {
   .logo {
-    max-height: 38px;
+    height: 38px;
 
     @include media.media-lg {
-      max-height: none;
       height: 46px;
     }
 
@@ -272,10 +271,9 @@
 
 .hiSky {
   .logo {
-    max-height: 64px;
+    height: 64px;
 
     @include media.media-lg {
-      max-height: none;
       height: 80px;
     }
 
@@ -287,10 +285,9 @@
 
 .xtend {
   .logo {
-    max-height: 42px;
+    height: 42px;
 
     @include media.media-lg {
-      max-height: none;
       height: 50px;
     }
 
@@ -302,10 +299,9 @@
 
 .avnon {
   .logo {
-    max-height: 74px;
+    height: 74px;
 
     @include media.media-lg {
-      max-height: none;
       height: 98px;
     }
 
@@ -317,10 +313,9 @@
 
 .isi {
   .logo {
-    max-height: 64px;
+    height: 64px;
 
     @include media.media-lg {
-      max-height: none;
       height: 88px;
     }
 
@@ -332,10 +327,9 @@
 
 .iai {
   .logo {
-    max-height: 64px;
+    height: 64px;
 
     @include media.media-lg {
-      max-height: none;
       height: 80px;
     }
 
@@ -347,10 +341,9 @@
 
 .permoid {
   .logo {
-    max-height: 56px;
+    height: 56px;
 
     @include media.media-lg {
-      max-height: none;
       height: 78px;
     }
 
@@ -362,10 +355,9 @@
 
 .san {
   .logo {
-    max-height: 64px;
+    height: 64px;
 
     @include media.media-lg {
-      max-height: none;
       height: 80px;
     }
 
@@ -377,10 +369,9 @@
 
 .robotican {
   .logo {
-    max-height: 46px;
+    height: 46px;
 
     @include media.media-lg {
-      max-height: none;
       height: 64px;
     }
 
@@ -392,10 +383,9 @@
 
 .thrivedx {
   .logo {
-    max-height: 26px;
+    height: 26px;
 
     @include media.media-lg {
-      max-height: none;
       height: 30px;
     }
 
@@ -407,10 +397,9 @@
 
 .silverShadow {
   .logo {
-    max-height: 34px;
+    height: 34px;
 
     @include media.media-lg {
-      max-height: none;
       height: 34px;
     }
 
@@ -433,6 +422,6 @@
   transition: all 0.2s ease;
 
   &:hover {
-    color: #fff;
+    color: #f9f9f9;
   }
 }
