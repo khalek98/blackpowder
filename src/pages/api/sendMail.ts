@@ -12,11 +12,11 @@ type ResponseData = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  // if (req.method !== 'POST') {
-  //   return res.status(405).json({ success: false, message: 'Method Not Allowed' });
-  // }
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+  }
 
-  const reqBody = JSON.parse(req.body) as IForm; //req.body;
+  const reqBody = req.body as IForm; //req.body;
 
   const firstName = reqBody.firstName;
   const lastName = reqBody.lastName;
