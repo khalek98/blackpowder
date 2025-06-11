@@ -1,0 +1,70 @@
+@use "@/styles/_media-mixin.scss" as media;
+@use "@/styles/_variables.scss" as vars;
+@use "@/styles/_mixins.scss" as mix;
+
+.CookieBar {
+  z-index: 999;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #111;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.Inner {
+  padding: 16px 8px;
+
+  display: grid;
+  justify-items: center;
+  row-gap: 16px;
+
+  justify-content: center;
+  grid-template-columns: auto;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+
+  @include media.media-lg {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+.Message {
+  display: flex;
+  align-items: center;
+}
+
+.Buttons {
+  display: grid;
+  justify-items: center;
+  row-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.Button {
+  @include mix.btn-filled;
+  padding: 8px 20px;
+  width: max-content;
+}
+
+.Link {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: underline;
+
+  transition: text-decoration 0.3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}

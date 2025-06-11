@@ -1,0 +1,78 @@
+@use "@/styles/_media-mixin.scss" as media;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Outfit:wght@100..900&family=Poppins:wght@400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  line-height: 1.5;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding-inline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+
+  @include media.media-sm {
+    padding: 0;
+    max-width: 720px;
+  }
+
+  @include media.media-md {
+    max-width: 880px;
+  }
+
+  @include media.media-lg {
+    max-width: 1080px;
+  }
+
+  @include media.media-xl {
+    max-width: 1320px;
+  }
+
+  @include media.media-2xl {
+    max-width: 1640px;
+  }
+}
+
+main {
+  position: relative;
+  overflow-x: clip;
+}

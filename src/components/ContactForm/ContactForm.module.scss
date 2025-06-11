@@ -1,0 +1,431 @@
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_mixins.scss' as mix;
+
+.overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: none;
+}
+
+.formWrapper {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  display: none;
+
+  background: #020512;
+  box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
+
+  transform: none;
+  border-radius: 0px;
+
+  @include media.media-lg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    max-height: 90vh;
+    width: auto;
+
+    border-radius: 10px;
+
+    &.errorState,
+    &.successState {
+      min-width: 800px;
+      min-height: 650px;
+    }
+  }
+}
+
+.show {
+  display: flex;
+}
+
+.formContainer {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: max-content;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+
+  &.successState,
+  &.errorState {
+    height: auto;
+  }
+
+  @include media.media-md {
+    flex-direction: row;
+    min-height: auto;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  z-index: 2;
+  top: 44px;
+  right: 44px;
+
+  height: 24px;
+  width: 24px;
+
+  fill: #fff;
+  cursor: pointer;
+
+  @include media.media-md {
+    top: 20px;
+    right: 20px;
+
+    &.errorState,
+    &.successState {
+      top: 44px;
+      right: 44px;
+    }
+  }
+}
+
+.content {
+  padding: 24px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  border-radius: 16px;
+  border: 1px solid #3c3d3f;
+  background-color: #141517;
+
+  @include media.media-md {
+    min-width: 420px;
+    padding: 50px 40px;
+    border-radius: 10px;
+  }
+}
+
+.logo {
+  width: 132px;
+  height: auto;
+  fill: #fff;
+}
+
+.title {
+  margin-top: 64px;
+
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  @include media.media-md {
+    margin-top: auto;
+  }
+}
+
+.description {
+  margin-top: 24px;
+
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.16px;
+}
+
+.contactList {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+}
+
+.contactTitle {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+.contact {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 162.5% */
+}
+
+.form {
+  position: relative;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  row-gap: 24px;
+
+  @include media.media-md {
+    padding: 0 20px 0 40px;
+  }
+}
+
+.formTitle {
+  color: var(--text-primary, #fff);
+
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: 0.48px;
+}
+
+.formGroup {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  position: relative;
+  padding: 8px 16px;
+
+  border-radius: 8px;
+  border: 1px solid var(--Light-gray, #3c3d3f);
+  background: var(--Gray, #141517);
+
+  color: var(--White-Text, #ececec);
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 200% */
+  letter-spacing: 0.16px;
+
+  @include media.media-md {
+    min-width: 330px;
+  }
+}
+
+.textarea {
+  resize: none;
+  height: auto;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 12px;
+
+  color: var(--White-Text, #ececec);
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.14px;
+
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkmark {
+  margin-top: 4px;
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border: 1px solid #ececec;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate(-50%, -50%);
+
+    width: 12px;
+    height: 12px;
+
+    background-color: #fff;
+    border-radius: 2px;
+
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.checkbox:checked + .checkmark {
+  &::after {
+    opacity: 1;
+  }
+}
+
+.submitBtn {
+  @include mix.btn-filled;
+  padding: 12px 40px;
+  width: 100%;
+
+  &:disabled {
+    background-color: #3c3d3f;
+  }
+}
+
+.successWrapper,
+.errorWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid #3c3d3f;
+  background: #141517;
+}
+
+.successContent,
+.errorContent {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  & > .submitBtn {
+    @include media.media-xs {
+      padding: 12px 56px;
+      width: max-content;
+    }
+  }
+}
+
+.mailSentIcon,
+.attentionIcon {
+  height: 54px;
+  width: auto;
+}
+
+.successTitle,
+.errorTitle {
+  color: var(--text-primary, #fff);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 28.8px */
+  letter-spacing: 0.24px;
+}
+
+.disabled,
+.input:disabled,
+.textarea:disabled,
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loadingIconWrapper {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+  width: 48px;
+  height: auto;
+
+  &.active {
+    display: block;
+  }
+}
+
+.loadingIcon {
+  width: 100%;
+  height: 100%;
+
+  fill: rgba(236, 236, 236, 0.8);
+  animation: spin 1s linear infinite;
+}
+
+.error {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+
+  color: #ff7171;
+  font-family: Outfit;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

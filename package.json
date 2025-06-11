@@ -1,0 +1,49 @@
+{
+  "name": "okiimdigital",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.3",
+    "@mui/lab": "^5.0.0-alpha.159",
+    "@mui/material": "^5.15.2",
+    "classnames": "^2.5.1",
+    "motion": "^12.16.0",
+    "next": "13.2.4",
+    "react": "^18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.43.5",
+    "react-scroll": "^1.9.0",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@types/node": "18.15.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-scroll": "^1.8.10",
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "postcss": "^8.4.21",
+    "sass": "^1.59.2",
+    "typescript": "^5.5.3"
+  },
+  "browserslist": [
+    "> 0.05%",
+    "IE 11",
+    "last 2 versions",
+    "not dead"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "packageManager": "yarn@4.9.1"
+}
