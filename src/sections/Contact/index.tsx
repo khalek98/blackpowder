@@ -31,7 +31,7 @@ const Contact = () => {
     setFormStatus('loading');
 
     try {
-      await fetch('/mailer/smart.php', {
+      await fetch('/api/sendMail', {
         method: 'POST',
         body: JSON.stringify(data),
       })

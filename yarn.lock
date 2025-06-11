@@ -2471,10 +2471,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:*":
+  version: 24.0.0
+  resolution: "@types/node@npm:24.0.0"
+  dependencies:
+    undici-types: "npm:~7.8.0"
+  checksum: 10c0/075f3129aa88932a0b4c3c9c28486f93a8d295151138b1fdd590cbbb59ec92d59b66201f99a0f061a7c8955a09d06ecc3fa070ed3c438a521a9890d1a3460958
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:18.15.0":
   version: 18.15.0
   resolution: "@types/node@npm:18.15.0"
   checksum: 10c0/64f385e8c48cc23ff2c25860a096bd4357c47dd35eae1a3bb0542f5320544dc280111d2a8542136422c643750ef75f4c41437a2d314a2bb7504772f540fe4141
+  languageName: node
+  linkType: hard
+
+"@types/nodemailer@npm:^6.4.17":
+  version: 6.4.17
+  resolution: "@types/nodemailer@npm:6.4.17"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/689abb3005cf36cf89c2abe56f0aa4469a37e0814633a73fbeb35732e856f4b0d7ab32b6d91585038b6941f5b70db58ec2bd147ebe9f73e528eb6c99604f4e82
   languageName: node
   linkType: hard
 
@@ -5263,6 +5281,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nodemailer@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "nodemailer@npm:7.0.3"
+  checksum: 10c0/835492262328471b94a080cea43ea20f4232e19a915400cd71c7f4f4ab93a7d361775154eebe30a8fc40379eecf11a0bbc73e6cf4bbee9dccb6dd1cf7a1dc792
+  languageName: node
+  linkType: hard
+
 "nopt@npm:^8.0.0":
   version: 8.1.0
   resolution: "nopt@npm:8.1.0"
@@ -5394,6 +5419,7 @@ __metadata:
     "@mui/material": "npm:^5.15.2"
     "@svgr/webpack": "npm:^6.5.1"
     "@types/node": "npm:18.15.0"
+    "@types/nodemailer": "npm:^6.4.17"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-scroll": "npm:^1.8.10"
@@ -5403,6 +5429,7 @@ __metadata:
     eslint-config-next: "npm:13.2.4"
     motion: "npm:^12.16.0"
     next: "npm:13.2.4"
+    nodemailer: "npm:^7.0.3"
     postcss: "npm:^8.4.21"
     react: "npm:^18.3.1"
     react-countup: "npm:^6.5.3"
@@ -6479,6 +6506,13 @@ __metadata:
     has-symbols: "npm:^1.0.3"
     which-boxed-primitive: "npm:^1.0.2"
   checksum: 10c0/81ca2e81134167cc8f75fa79fbcc8a94379d6c61de67090986a2273850989dd3bae8440c163121b77434b68263e34787a675cbdcb34bb2f764c6b9c843a11b66
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.8.0":
+  version: 7.8.0
+  resolution: "undici-types@npm:7.8.0"
+  checksum: 10c0/9d9d246d1dc32f318d46116efe3cfca5a72d4f16828febc1918d94e58f6ffcf39c158aa28bf5b4fc52f410446bc7858f35151367bd7a49f21746cab6497b709b
   languageName: node
   linkType: hard
 

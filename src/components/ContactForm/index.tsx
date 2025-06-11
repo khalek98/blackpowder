@@ -9,16 +9,15 @@ import styles from './ContactForm.module.scss';
 import LogoIcon from '@/assets/icons/LogoIcon';
 import MailSentIcon from '@/assets/icons/MailSentIcon';
 import AttentionIcon from '@/assets/icons/AttentionIcon';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import LoadingIcon from '@/assets/icons/LoadingIcon';
 
-interface IForm {
-  firstName: '';
-  lastName: '';
-  email: '';
-  phone?: '';
-  message: '';
+export interface IForm {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  message: string;
   termsCheckbox: boolean;
 }
 
@@ -61,7 +60,7 @@ const ContactForm = () => {
     setFormStatus('loading');
 
     try {
-      await fetch('/mailer/smart.php', {
+      await fetch('/api/sendMail', {
         method: 'POST',
         body: JSON.stringify(data),
       })
