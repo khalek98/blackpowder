@@ -1,6 +1,6 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
-@use "@/styles/_mixins.scss" as mix;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
+@use '@/styles/_mixins.scss' as mix;
 
 .section {
   position: relative;
@@ -75,7 +75,7 @@
 }
 
 .label {
-  font-family: "Outfit";
+  font-family: 'Outfit';
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -213,6 +213,10 @@
   letter-spacing: 0.32px;
   color: rgba(255, 255, 255, 0.8);
 
+  span {
+    font-weight: 600;
+  }
+
   @include media.media-lg {
     letter-spacing: 0.48px;
   }
@@ -238,7 +242,7 @@
   padding-left: 16px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 12px;
     left: 3px;

@@ -1,6 +1,6 @@
-@use "@/styles/_media-mixin.scss" as media;
-@use "@/styles/_variables.scss" as vars;
-@use "@/styles/_mixins.scss" as mix;
+@use '@/styles/_media-mixin.scss' as media;
+@use '@/styles/_variables.scss' as vars;
+@use '@/styles/_mixins.scss' as mix;
 
 .section {
   position: relative;
@@ -53,7 +53,7 @@
 
 .label {
   color: var(--text-Secondary, rgba(255, 255, 255, 0.8));
-  font-family: "Outfit";
+  font-family: 'Outfit';
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -151,30 +151,16 @@
   justify-content: center;
 
   @include media.media-lg {
-    padding: 60px 40px;
-    max-height: 180px;
+    padding: 60px 20px;
+    height: 200px;
   }
 
-  @include media.media-xl {
-    max-height: 200px;
+  @include media.media-2xl {
+    height: 240px;
   }
-
-  // @include media.media-xl {
-  //   padding: 60px 100px;
-  // }
 }
 
 .logoWrapper {
-  opacity: 0.8;
-  filter: grayscale(1);
-
-  transition: all 0.2s ease;
-
-  &:hover {
-    opacity: 1;
-    filter: grayscale(0);
-  }
-
   &:nth-child(1) {
     border-top: 1px solid #3c3c3c;
     border-right: 1px solid #3c3c3c;
@@ -236,22 +222,202 @@
 
 .logoLink {
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
+  width: 100%;
 }
 
 .logo {
-  width: 100%;
+  width: auto;
   height: 100%;
-  max-width: 200px;
-  max-height: 74px;
+
+  opacity: 0.8;
+  filter: grayscale(1);
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0);
+  }
 }
 
 .logoSVG {
   transition: all 0.2s ease;
+
+  path {
+    transition: all 0.2s ease;
+  }
 }
 
 .logoImg {
   object-fit: contain;
+}
+
+.airEye {
+  .logo {
+    max-height: 38px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 46px;
+    }
+
+    @include media.media-2xl {
+      height: 50px;
+    }
+  }
+}
+
+.hiSky {
+  .logo {
+    max-height: 64px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 80px;
+    }
+
+    @include media.media-2xl {
+      height: 90px;
+    }
+  }
+}
+
+.xtend {
+  .logo {
+    max-height: 42px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 50px;
+    }
+
+    @include media.media-2xl {
+      height: 60px;
+    }
+  }
+}
+
+.avnon {
+  .logo {
+    max-height: 74px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 98px;
+    }
+
+    @include media.media-2xl {
+      height: 110px;
+    }
+  }
+}
+
+.isi {
+  .logo {
+    max-height: 64px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 88px;
+    }
+
+    @include media.media-2xl {
+      height: 100px;
+    }
+  }
+}
+
+.iai {
+  .logo {
+    max-height: 64px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 80px;
+    }
+
+    @include media.media-2xl {
+      height: 90px;
+    }
+  }
+}
+
+.permoid {
+  .logo {
+    max-height: 56px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 78px;
+    }
+
+    @include media.media-2xl {
+      height: 90px;
+    }
+  }
+}
+
+.san {
+  .logo {
+    max-height: 64px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 80px;
+    }
+
+    @include media.media-2xl {
+      height: 90px;
+    }
+  }
+}
+
+.robotican {
+  .logo {
+    max-height: 46px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 64px;
+    }
+
+    @include media.media-2xl {
+      height: 80px;
+    }
+  }
+}
+
+.thrivedx {
+  .logo {
+    max-height: 26px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 30px;
+    }
+
+    @include media.media-2xl {
+      height: 34px;
+    }
+  }
+}
+
+.silverShadow {
+  .logo {
+    max-height: 34px;
+
+    @include media.media-lg {
+      max-height: none;
+      height: 34px;
+    }
+
+    @include media.media-2xl {
+      height: 40px;
+    }
+  }
 }
 
 .seeMore {

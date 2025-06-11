@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
-import { motion, Variants } from 'motion/react';
+import { motion } from 'motion/react';
 
 import styles from './Partners.module.scss';
 
@@ -17,75 +17,83 @@ import SANLogo from './logos/SANLogo';
 import SilverShadowLogo from './logos/silver_shadow_logo.png';
 import RoboticanLogo from './logos/Robotican.png';
 import PermoidLogo from './logos/permoid_logo.png';
-import HOSLogo from './logos/HOSLogo';
 import TrianglesBGImg from '@/assets/img/triangles_bg.png';
-import hiSkyLogo from './logos/hiSkyLogo';
+import hiSkyLogo from './logos/HiskyLogo';
 
 const partnerLogos: {
+  key: string;
   name: string;
   logoComponent?: React.FC<IconProps>;
   img?: StaticImageData;
   partnerLink: string;
 }[] = [
   {
+    key: 'airEye',
     name: 'AirEye Ltd',
     logoComponent: AireyeLogo,
     partnerLink: 'https://aireye.tech/',
   },
   {
-    name: 'Xtend defense',
-    logoComponent: XtendLogo,
-    partnerLink: 'https://www.xtend.me/',
+    key: 'hiSky',
+    name: 'hiSky',
+    logoComponent: hiSkyLogo,
+    partnerLink: 'https://hiskysat.com/company/',
   },
+
   {
+    key: 'isi',
     name: 'ImageSat International (ISI)',
     logoComponent: ISILogo,
     partnerLink: 'https://imagesatintl.com/home/satellite-solutions/',
   },
   {
+    key: 'avnon',
     name: 'Avnon Group',
     logoComponent: AvnonLogo,
     partnerLink: 'https://avnongroup.com/',
   },
   {
+    key: 'iai',
     name: 'IAI',
     logoComponent: IAILogo,
     partnerLink: 'https://www.iai.co.il',
   },
   {
-    name: 'HOS R&D',
-    logoComponent: HOSLogo,
-    partnerLink: 'https://www.hosrnd.com/',
+    key: 'xtend',
+    name: 'Xtend defense',
+    logoComponent: XtendLogo,
+    partnerLink: 'https://www.xtend.me/',
   },
+
   {
+    key: 'permoid',
     name: 'Permoid',
     img: PermoidLogo,
     partnerLink: 'https://permoid.com/',
   },
   {
+    key: 'san',
     name: 'SAN LTD',
     logoComponent: SANLogo,
     partnerLink: 'https://san.co.il/',
   },
   {
+    key: 'robotican',
     name: 'Robotican',
     img: RoboticanLogo,
     partnerLink: 'https://robotican.net/',
   },
   {
+    key: 'thrivedx',
     name: 'ThriveDX',
     logoComponent: ThrivedxLogo,
     partnerLink: 'https://thrivedx.com/',
   },
   {
+    key: 'silverShadow',
     name: 'Silver Shadow',
     img: SilverShadowLogo,
     partnerLink: 'https://silver-shadow.com/about-silver-shadow/',
-  },
-  {
-    name: 'hiSky',
-    logoComponent: hiSkyLogo,
-    partnerLink: 'https://hiskysat.com/company/',
   },
 ];
 
@@ -97,13 +105,22 @@ const Partners = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const visibleCount = partnerRefs.current.reduce((count, el) => {
-      if (!el) return count;
-      const display = getComputedStyle(el).display;
-      return display !== 'none' ? count + 1 : count;
-    }, 0);
+    const handleResize = () => {
+      const visibleCount = partnerRefs.current.reduce((count, el) => {
+        if (!el) return count;
+        const display = getComputedStyle(el).display;
+        return display !== 'none' ? count + 1 : count;
+      }, 0);
 
-    setCurrentCountElements(visibleCount);
+      setCurrentCountElements(visibleCount);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [partnerRefs, showMore]);
 
   return (
@@ -126,15 +143,15 @@ const Partners = () => {
               [styles.hasLasChildOdd]: (currentCountElements + (!showMore ? 1 : 0)) % 2 !== 0,
             })}
           >
-            {partnerLogos.map(({ partnerLink, logoComponent: LogoComponent, img, name }, index) => (
+            {partnerLogos.map(({ key, partnerLink, logoComponent: LogoComponent, img, name }, index) => (
               <div
                 ref={(el) => {
                   if (el) {
                     partnerRefs.current[index] = el;
                   }
                 }}
-                key={index}
-                className={cn(styles.logoWrapper, {
+                key={key}
+                className={cn(styles.logoWrapper, `${styles[key] ? styles[key] : ''}`, {
                   [styles.show]: showMore,
                 })}
               >

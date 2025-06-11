@@ -16,6 +16,23 @@ import TrianglesBGImg from '@/assets/img/triangles_bg.png';
 
 const solutionList = [
   {
+    title: 'Satellite Services',
+    img: SatelliteServicesIMG,
+    description: [
+      <motion.p className={styles.solutionDescription}>
+        We provide advanced satellite observation services with global coverage. Our solutions transform high-resolution
+        imagery into actionable insights for infrastructure monitoring, environmental assessment, disaster response, and
+        strategic decision-making — enabling faster, more informed actions.
+      </motion.p>,
+      <motion.p className={styles.solutionDescription}>
+        Complementing our observational capabilities, we deliver satellite communication solutions that ensure reliable,
+        continuous connectivity anywhere, anytime. Our compact terminals operate over global satellite networks,
+        providing secure voice, data, IoT, and M2M communication across land, sea, and air— even in the most remote
+        locations.
+      </motion.p>,
+    ],
+  },
+  {
     title: 'Data & Command Platforms',
     img: DataCommandPlatformIMG,
     description: [
@@ -45,20 +62,7 @@ const solutionList = [
       </motion.p>,
     ],
   },
-  {
-    title: 'Satellite Services',
-    img: SatelliteServicesIMG,
-    description: [
-      <motion.p className={styles.solutionDescription}>
-        We provide advanced satellite intelligence services with global coverage. From infrastructure surveillance to
-        environmental monitoring and emergency response, our systems translate satellite data into actionable insights.
-      </motion.p>,
-      <motion.p className={styles.solutionDescription}>
-        This includes integration of imagery, heat mapping, and radar data to support real-time decisions in complex
-        geographic and operational contexts.
-      </motion.p>,
-    ],
-  },
+
   {
     title: 'Drone & Anti-Drone Technologies',
     img: DroneAntiDroneTechnologiesIMG,
@@ -84,8 +88,8 @@ const solutionList = [
         sensitive data and ensure uninterrupted operations.
       </motion.p>,
       <motion.p className={styles.solutionDescription}>
-        Trusted by institutions in energy, transportation, public administration, and beyond, we help organizations
-        strengthen their digital resilience.
+        Trusted by institutions in energy, transportation, public administration, and{' '}
+        <span>defense institution and governments</span>, we help organizations strengthen their digital resilience.
       </motion.p>,
     ],
   },
