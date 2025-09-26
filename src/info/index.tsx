@@ -3,8 +3,8 @@ import React from 'react';
 import { InfoInterface } from './info.types';
 
 export const info: InfoInterface = {
-  name: 'Black Powder',
-  fullname: 'Black Powder Ltd',
+  name: 'BPG Albania',
+  fullname: 'BPG Albania Ltd',
   address: 'Str. Kavaja, Delijorgj, Tirana, Albania',
   url: 'blackpowderglobal.com',
   email: 'info@blackpowderglobal.com',

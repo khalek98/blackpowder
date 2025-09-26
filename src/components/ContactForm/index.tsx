@@ -246,7 +246,7 @@ const ContactForm = () => {
                     }}
                     className={styles.checkmark}
                   ></span>
-                  By submitting this form, you consent to Black Powder Ltd and its subsidiaries processing your data.
+                  By submitting this form, you consent to BPG Albania Ltd and its subsidiaries processing your data.
                 </label>
 
                 <button

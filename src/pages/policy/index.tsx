@@ -11,7 +11,7 @@ const Policy = () => {
     <>
       <Head>
         <meta name="description" content={`Privacy Policy for ${info.fullname}`} />
-        <title>Privacy Policy | Black Powder</title>
+        <title>Privacy Policy | BPG Albania</title>
       </Head>
 
       <MainLayout darkBG>

@@ -34,9 +34,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   try {
     const response = await transporter.sendMail({
-      from: `"Black Powder" <${process.env.SMTP_USER}>`,
+      from: `"BPG Albania" <${process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO,
-      subject: `[Black Powder form] New message from: ${firstName} ${lastName}`,
+      subject: `[BPG Albania form] New message from: ${firstName} ${lastName}`,
       html: `
       <body>
       <p>User filled the form:</p>
