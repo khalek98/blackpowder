@@ -5,6 +5,7 @@ import { animateScroll } from 'react-scroll';
 import styles from './footer.module.scss';
 import ArrowIcon from './icons/ArrowIcon';
 import LogoIcon from '@/assets/icons/LogoIcon';
+import { info } from '@/info';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -50,7 +51,9 @@ const Footer = () => {
         <div className={styles.Divider}></div>
 
         <div className={styles.FooterBottom}>
-          <p className={styles.Copyright}>© {new Date().getFullYear()} BlackPowder Ltd, All Right Reserved.</p>
+          <p className={styles.Copyright}>
+            © {new Date().getFullYear()} {info.fullname}, All Right Reserved.
+          </p>
 
           <div className={styles.Links}>
             <Link className={styles.Link} href="/cookies">
