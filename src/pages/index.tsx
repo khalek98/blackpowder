@@ -15,7 +15,7 @@ const Home: FC = () => {
         <Hero />
         <About />
         <Video />
-        <Partners />
+        {/* <Partners /> */}
         <CTA />
         <Services />
         <Contact />
